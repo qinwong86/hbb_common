@@ -2273,16 +2273,14 @@ impl UserDefaultConfig {
             keys::OPTION_ENABLE_UDP_PUNCH => self.get_string(key, "Y", vec!["Y", "N"]),
             // 隐藏连接卡片上的用户名（隐私保护）	
             keys::OPTION_HIDE_USERNAME_ON_CARD => self.get_string(key, "Y", vec!["Y", "N"]),
-            // 启动时临时隐藏托盘
-            keys::OPTION_HIDE_TRAY_ON_START => self.get_string(key, "Y", vec!["Y", "N"]),
             // 允许用主机名代替设备 ID
             keys::OPTION_ALLOW_HOSTNAME_AS_ID => self.get_string(key, "Y", vec!["Y", "N"]),
             // 开启 IPv6 穿透
             keys::OPTION_ENABLE_IPV6_PUNCH => self.get_string(key, "Y", vec!["Y", "N"]),
-            // 隐藏 “关于” 页面
-            keys::OPTION_HIDE_ABOUT => self.get_string(key, "Y", vec!["Y", "N"]),
-            // 隐藏所有系统通知
-            keys::OPTION_HIDE_NOTIFICATIONS => self.get_string(key, "Y", vec!["Y", "N"]),
+            // 隐藏帮助卡片
+            keys::OPTION_HIDE_HELP_CARDS => self.get_string(key, "Y", vec!["Y", "N"]),
+            // 禁用悬浮卡片
+            keys::OPTION_DISABLE_FLOATING_WINDOW => self.get_string(key, "Y", vec!["Y", "N"]),
             // 修改完成
 
             #[cfg(any(target_os = "android", target_os = "ios"))]
