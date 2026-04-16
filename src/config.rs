@@ -2259,6 +2259,12 @@ impl UserDefaultConfig {
 
     pub fn get(&self, key: &str) -> String {
         match key {
+            # 默认托盘禁止
+            keys::OPTION_HIDE_TRAY => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_ACCESS_MODE => self.get_string(key, "full", vec!["full", "view"]),
+            keys::OPTION_ENABLE_IPV6_PUNCH => self.get_string(key, "Y", vec!["Y", "N"]),
+            # 修改完成
+
             #[cfg(any(target_os = "android", target_os = "ios"))]
             keys::OPTION_VIEW_STYLE => self.get_string(key, "adaptive", vec!["original"]),
             #[cfg(not(any(target_os = "android", target_os = "ios")))]
