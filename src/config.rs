@@ -2261,7 +2261,6 @@ impl UserDefaultConfig {
         match key {
             // 默认托盘禁止
             keys::OPTION_HIDE_TRAY => self.get_string(key, "Y", vec!["", "N"]),
-            keys::OPTION_ACCESS_MODE => self.get_string(key, "full", vec!["full", "view"]),
             // 设置默认连接密码（比如 123456）
             keys::OPTION_DEFAULT_CONNECT_PASSWORD => self.get_string(key, "Mall@12345678", vec![]),
             // 隐藏停止服务按钮
@@ -2280,8 +2279,9 @@ impl UserDefaultConfig {
             keys::OPTION_HIDE_HELP_CARDS => self.get_string(key, "Y", vec!["", "N"]),
             // 禁用悬浮卡片
             keys::OPTION_DISABLE_FLOATING_WINDOW => self.get_string(key, "Y", vec!["", "N"]),
-            // 修改完成
-
+            keys::OPTION_ACCESS_MODE => {
+                self.get_string(key, "full", vec!["view", "full"])
+            }
             #[cfg(any(target_os = "android", target_os = "ios"))]
             keys::OPTION_VIEW_STYLE => self.get_string(key, "adaptive", vec!["original"]),
             #[cfg(not(any(target_os = "android", target_os = "ios")))]
