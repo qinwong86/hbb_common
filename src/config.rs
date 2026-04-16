@@ -2260,27 +2260,26 @@ impl UserDefaultConfig {
     pub fn get(&self, key: &str) -> String {
         match key {
             // 默认托盘禁止
-            keys::OPTION_HIDE_TRAY => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_HIDE_TRAY => self.get_string(key, "Y", vec!["", "N"]),
             keys::OPTION_ACCESS_MODE => self.get_string(key, "full", vec!["full", "view"]),
-            keys::OPTION_ENABLE_IPV6_PUNCH => self.get_string(key, "Y", vec!["Y", "N"]),
             // 设置默认连接密码（比如 123456）
             keys::OPTION_DEFAULT_CONNECT_PASSWORD => self.get_string(key, "Mall@12345678", vec![]),
             // 隐藏停止服务按钮
-            keys::OPTION_HIDE_STOP_SERVICE => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_HIDE_STOP_SERVICE => self.get_string(key, "Y", vec!["", "N"]),
             // 禁止修改设备ID
-            keys::OPTION_DISABLE_CHANGE_ID => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_DISABLE_CHANGE_ID => self.get_string(key, "Y", vec!["", "N"]),
             // 强制开启 UDP 穿透
-            keys::OPTION_ENABLE_UDP_PUNCH => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_ENABLE_UDP_PUNCH => self.get_string(key, "Y", vec!["", "N"]),
             // 隐藏连接卡片上的用户名（隐私保护）	
-            keys::OPTION_HIDE_USERNAME_ON_CARD => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_HIDE_USERNAME_ON_CARD => self.get_string(key, "Y", vec!["", "N"]),
             // 允许用主机名代替设备 ID
-            keys::OPTION_ALLOW_HOSTNAME_AS_ID => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_ALLOW_HOSTNAME_AS_ID => self.get_string(key, "Y", vec!["", "N"]),
             // 开启 IPv6 穿透
-            keys::OPTION_ENABLE_IPV6_PUNCH => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_ENABLE_IPV6_PUNCH => self.get_string(key, "Y", vec!["", "N"]),
             // 隐藏帮助卡片
-            keys::OPTION_HIDE_HELP_CARDS => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_HIDE_HELP_CARDS => self.get_string(key, "Y", vec!["", "N"]),
             // 禁用悬浮卡片
-            keys::OPTION_DISABLE_FLOATING_WINDOW => self.get_string(key, "Y", vec!["Y", "N"]),
+            keys::OPTION_DISABLE_FLOATING_WINDOW => self.get_string(key, "Y", vec!["", "N"]),
             // 修改完成
 
             #[cfg(any(target_os = "android", target_os = "ios"))]
